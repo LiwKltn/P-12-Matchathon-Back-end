@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bootcamps_models', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+           $table->bigIncrements('id');
+           $table->string('name');
+           $table->timestamps();
         });
     }
 

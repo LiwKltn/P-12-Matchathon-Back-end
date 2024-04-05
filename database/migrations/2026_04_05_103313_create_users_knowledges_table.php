@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('genders', function (Blueprint $table) {
+        Schema::create('users_knowledges', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('gender');
+            $table->string('knowledges_level');
+            $table->unsignedBigInteger('knowledge_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('knowledge_id')->references('id')->on('knowledges');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('genders');
+        Schema::dropIfExists('users_knowledges');
     }
 };
