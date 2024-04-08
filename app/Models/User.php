@@ -42,4 +42,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function KowledgeUser()
+    {
+        return $this->hasMany(User_Knowledge::class);
+    }
+
+    public function bootcamp()
+    {
+        return $this->belongsTo(Bootcamp::class);
+    }
+
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
