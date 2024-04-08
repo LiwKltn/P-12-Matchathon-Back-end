@@ -18,7 +18,7 @@ class User_Knowledge extends Model
 
     public function knowledge()
     {
-        return $this->belongsToMany(Knowledge::class);
+        return $this->belongsTo(Knowledge::class);
     }
 
     public function level()

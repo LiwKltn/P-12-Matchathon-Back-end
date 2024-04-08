@@ -11,8 +11,8 @@ class Knowledge extends Model
     protected $table = 'knowledges';
     protected $guarded = [];
 
-    public function userKnowledge()
+    public function userKnowledges()
     {
-        return $this->belongsToMany(User_Knowledge::class);
+        return $this->hasMany(User_Knowledge::class);
     }
 }

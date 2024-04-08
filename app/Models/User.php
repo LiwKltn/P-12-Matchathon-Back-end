@@ -43,11 +43,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function KowledgeUser()
+    public function knowledgeUser()
     {
         return $this->hasMany(User_Knowledge::class);
     }
-
     public function bootcamp()
     {
         return $this->belongsTo(Bootcamp::class);

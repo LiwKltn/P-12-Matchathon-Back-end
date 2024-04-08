@@ -1,0 +1,25 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ */
+class UserKnowledgesFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'users_id'=> \App\Models\User::pluck('id')->random(),
+            'knowledges_id'=> \App\Models\Knowledge::pluck('id')->random(),
+            'levels_id'=> \App\Models\Level::pluck('id')->random(),
+        ];
+    }
+}
