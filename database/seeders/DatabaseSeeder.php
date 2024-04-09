@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             KnowledgeSeeder::class,
             UserSeeder::class,
             UserKnowledgeSeeder::class,
+            TeamSeeder::class,
         ]);
     }
 }
