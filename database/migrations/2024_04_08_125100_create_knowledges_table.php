@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('knowledges', function (Blueprint $table) {
             $table->id();
             $table->string('tecnology');
-            $table->unsignedBigInteger('stacks_id');
-            $table->foreign('stacks_id')->references('id')->on('stacks');
+            $table->unsignedBigInteger('stack_id');
+            $table->foreign('stack_id')->references('id')->on('stacks');
             $table->timestamps();
         });
     }

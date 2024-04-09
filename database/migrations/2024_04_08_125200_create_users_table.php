@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->unsignedBigInteger('bootcamps_id');
-            $table->unsignedBigInteger('genders_id');
-            $table->unsignedBigInteger('roles_id');
-            $table->foreign('bootcamps_id')->references('id')->on('bootcamps');
-            $table->foreign('genders_id')->references('id')->on('genders');
-            $table->foreign('roles_id')->references('id')->on('roles');
+            $table->unsignedBigInteger('bootcamp_id');
+            $table->unsignedBigInteger('gender_id');
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('bootcamp_id')->references('id')->on('bootcamps');
+            $table->foreign('gender_id')->references('id')->on('genders');
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class StackFactory extends Factory
     public function definition(): array
     {
         return [
-            'stacks_id'=> \App\Models\Stack::pluck('id')->random(),
+            'stack_id'=> \App\Models\Stack::pluck('id')->random(),
         ];
     }
 }

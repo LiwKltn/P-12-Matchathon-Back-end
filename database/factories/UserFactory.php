@@ -31,9 +31,9 @@ class UserFactory extends Factory
             'lastname' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
-            'bootcamps_id' => Bootcamp::all()->random()->id,
-            'genders_id' => Gender::all()->random()->id,
-            'roles_id' => Role::all()->random()->id,
+            'bootcamp_id' => Bootcamp::all()->random()->id,
+            'gender_id' => Gender::all()->random()->id,
+            'role_id' => Role::all()->random()->id,
         ];
     }
 

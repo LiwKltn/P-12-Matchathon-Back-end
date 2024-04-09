@@ -17,7 +17,7 @@ class KnowledgeFactory extends Factory
     public function definition(): array
     {
         return [
-            'knowledges_id'=> \App\Models\Knowledge::pluck('id')->random(),
+            'knowledge_id'=> \App\Models\Knowledge::pluck('id')->random(),
         ];
     }
 }

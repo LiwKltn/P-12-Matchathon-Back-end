@@ -18,7 +18,7 @@ class StackSeeder extends Seeder
 
         DB::table('stacks')->insert([
             ['stack' => 'Front-End', 'created_at' => $now, 'updated_at' => $now],
-            ['stack' => 'Front-Backend', 'created_at' => $now, 'updated_at' => $now],
+            ['stack' => 'Backend', 'created_at' => $now, 'updated_at' => $now],
             ['stack' => 'Control Versiones', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }

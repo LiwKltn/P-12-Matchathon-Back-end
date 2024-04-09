@@ -17,9 +17,9 @@ class UserKnowledgesFactory extends Factory
     public function definition(): array
     {
         return [
-            'users_id'=> \App\Models\User::pluck('id')->random(),
-            'knowledges_id'=> \App\Models\Knowledge::pluck('id')->random(),
-            'levels_id'=> \App\Models\Level::pluck('id')->random(),
+            'user_id'=> \App\Models\User::pluck('id')->random(),
+            'knowledge_id'=> \App\Models\Knowledge::pluck('id')->random(),
+            'level_id'=> \App\Models\Level::pluck('id')->random(),
         ];
     }
 }

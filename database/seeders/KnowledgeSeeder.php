@@ -17,13 +17,13 @@ class KnowledgeSeeder extends Seeder
         $now = Carbon::now();
 
         DB::table('knowledges')->insert([
-            ['stacks_id' => 1, 'tecnology' => 'Angular', 'created_at' => $now, 'updated_at' => $now],
-            ['stacks_id' => 1, 'tecnology' => 'React', 'created_at' => $now, 'updated_at' => $now],
-            ['stacks_id' => 1, 'tecnology' => 'Vue', 'created_at' => $now, 'updated_at' => $now],
-            ['stacks_id' => 2, 'tecnology' => 'Laravel', 'created_at' => $now, 'updated_at' => $now],
-            ['stacks_id' => 2, 'tecnology' => 'Spring', 'created_at' => $now, 'updated_at' => $now],
-            ['stacks_id' => 2, 'tecnology' => 'NestJs', 'created_at' => $now, 'updated_at' => $now],
-            ['stacks_id' => 3, 'tecnology' => 'Git y Github', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 1, 'tecnology' => 'Angular', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 1, 'tecnology' => 'React', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 1, 'tecnology' => 'Vue', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 2, 'tecnology' => 'Laravel', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 2, 'tecnology' => 'Spring', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 2, 'tecnology' => 'NestJs', 'created_at' => $now, 'updated_at' => $now],
+            ['stack_id' => 3, 'tecnology' => 'Git y Github', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

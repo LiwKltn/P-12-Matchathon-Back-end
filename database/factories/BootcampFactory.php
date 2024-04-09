@@ -17,7 +17,7 @@ class BootcampFactory extends Factory
     public function definition(): array
     {
         return [
-            'bootcamps_id'=> \App\Models\Bootcamp::pluck('id')->random(),
+            'bootcamp_id'=> \App\Models\Bootcamp::pluck('id')->random(),
         ];
     }
 }
