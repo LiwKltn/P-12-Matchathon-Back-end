@@ -17,7 +17,6 @@ class RoleSeeder extends Seeder
         $now = Carbon::now();
 
         DB::table('roles')->insert([
-            ['role' => 'admin', 'created_at' => $now, 'updated_at' => $now],
             ['role' => 'coder', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
