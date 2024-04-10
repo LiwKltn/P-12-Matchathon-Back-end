@@ -24,4 +24,13 @@ class TeamFactory extends Factory
             ];
     
     }
+    public function numbered(int $position)
+    {
+        return $this->state(function (array $attributes) use ($position) {
+            return [
+                'name' => 'team ' . $position,
+            ];
+        });
+    }
 }
+

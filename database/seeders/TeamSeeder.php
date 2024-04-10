@@ -11,8 +11,12 @@ class TeamSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run()
     {
-        Team::factory()->count(30)->create();
+        
+        for ($i = 1; $i <= 30; $i++) {
+            Team::factory()->numbered($i)->create();
+        }
     }
 }
+
