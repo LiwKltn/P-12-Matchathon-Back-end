@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BootcampController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,13 @@ Route::controller(BootcampController::class)->group(function() {
     Route::put('/bootcamp/{id}',  'update' );
     Route::delete('/bootcamp/{id}',  'destroy' );
 });
+
+Route::controller(UserController::class)->group(function() {
+    Route::get('/user', 'index');
+    Route::get('/user/{id}', 'show');
+    Route::post('/user', 'store');
+    Route::put('/user/{id}', 'update');
+    Route::delete('/user/{id}', 'destroy');
+});
+
 

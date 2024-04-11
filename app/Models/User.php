@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     public function knowledgeUser()
     {
-        return $this->hasMany(User_Knowledge::class);
+        return $this->hasMany(UserKnowledge::class);
     }
     public function bootcamp()
     {
