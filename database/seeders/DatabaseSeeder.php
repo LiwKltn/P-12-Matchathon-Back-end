@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RoleSeeder::class,
-            GenderSeeder::class,
             BootcampSeeder::class,
             StackSeeder::class,
             LevelSeeder::class,
