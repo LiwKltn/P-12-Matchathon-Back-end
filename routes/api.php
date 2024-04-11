@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BootcampController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::controller(BootcampController::class)->group(function() {
+    Route::get('/bootcamp',  'index' );
+    Route::get('/bootcamp/{id}',  'show' );
+    Route::post('/bootcamp',  'store' );
+    Route::put('/bootcamp/{id}',  'update' );
+    Route::delete('/bootcamp/{id}',  'destroy' );
+});
+
+Route::controller(UserController::class)->group(function() {
+    Route::get('/user', 'index');
+    Route::get('/user/{id}', 'show');
+    Route::post('/user', 'store');
+    Route::put('/user/{id}', 'update');
+    Route::delete('/user/{id}', 'destroy');
+});
+
+

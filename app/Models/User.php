@@ -19,8 +19,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
         'email',
-        'password',
+        'bootcamp_id',
+        
     ];
 
     /**
@@ -42,4 +44,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function knowledgeUser()
+    {
+        return $this->hasMany(UserKnowledge::class);
+    }
+    public function bootcamp()
+    {
+        return $this->belongsTo(Bootcamp::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
