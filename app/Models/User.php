@@ -52,11 +52,6 @@ class User extends Authenticatable
         return $this->belongsTo(Bootcamp::class);
     }
 
-    public function gender()
-    {
-        return $this->belongsTo(Gender::class);
-    }
-
     public function role()
     {
         return $this->belongsTo(Role::class);
