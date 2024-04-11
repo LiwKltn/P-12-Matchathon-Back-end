@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -7,57 +6,31 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
-    public function index()
+    public function generateTeams(Request $request)
     {
-        return view ('home');
-    }
+        // Obtener el número mínimo y máximo de participantes por equipo
+        $minParticipants = $request->input('minParticipants');
+        $maxParticipants = $request->input('maxParticipants');
 
-    public function createTeams(Request $request)
-    {
-        $minParticipants = 7;
-        $maxParticipants = 9;
+        // Obtener los usuarios que cumplen con los criterios requeridos
+        $users = User::whereHas('knowledges', function ($query) {
+            $query->where('level_id', 1) // Senior en back
+                  ->whereHas('stack', function ($query) {
+                      $query->where('id', 2); // Stack número 2 (backend)
+                  });
+        })->get();
 
-        $users = User::all();
-
+        // Lógica para distribuir los usuarios en equipos según los criterios específicos
         $teams = $this->assignUsersToTeams($users, $minParticipants, $maxParticipants);
 
-        return view('teams', compact('teams'));
+        // Devolver los equipos en formato JSON
+        return response()->json(['teams' => $teams]);
     }
 
+    // Método para asignar usuarios a equipos (implementación depende de tu lógica específica)
     private function assignUsersToTeams($users, $minParticipants, $maxParticipants)
     {
-        $teams = [];
-        $assignedUsers = [];
-
-        foreach ($users as $user) {
-            if (count($assignedUsers) >= count($users)) {
-                break;
-            }
-
-            $team = [];
-           
-        }
-
-        return $teams;
+        // Implementa la lógica para asignar usuarios a equipos aquí
     }
 }
 
-
-            // Lógica para asignar usuarios a equipos basada en los conocimientos o habilidades
-
-            // Por ejemplo, podrías usar las relaciones definidas en los modelos para obtener los conocimientos de un usuario
-            //$userKnowledges = $user->knowledges;
-
-            // Lógica para construir el equipo de acuerdo a los conocimientos
-            // Aquí puedes adaptar la lógica del controlador original según tus necesidades
-
-            // Agregar el usuario al equipo
-            //$team[] = $user;
-            //$assignedUsers[] = $user->id;
-
-            // Agregar el equipo a la lista de equipos
-            //$teams[] = $team;
-        
-
-        //return $teams;
-    
